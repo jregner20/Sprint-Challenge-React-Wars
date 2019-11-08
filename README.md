@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React is a UI library that is used in various forms to create complex, rich user interfaces. It is also a huge problem solver because without it, DOM operations are quite expensive in terms of performance, and any application that has much of DOM operations in the background will render slowly. If the page has data that changes over time at high rates (for example, lots of people commenting on a post, likes being generated etc), then there is a requirement for DOM updates to be very fast and also reflect in other parts of the UI if they use the same data. React solves this problem, without even having the page reload. It does by a concept called virtual DOM. When a page is rendered using React, the state of the DOM tree structure/hierarchy is stored, and when there any updates to be made to the UI, it does a diff on the previous (old) DOM tree with the new one, and updates only the ones that have changed. In this way, lots of DOM operations/refreshes are reduced, improving performance considerably.
+
 - [ ] What does it mean to _think_ in react?
+
+"Thinking" in React means being able break down an app into different components.
 
 - [ ] Describe state.
 
+State is an object that represents the parts of the app that can change. Each component can maintain its own state. If you’d like your app to do anything – if you want interactivity, adding and deleting things, logging in and out – that will involve state. A state in a React component is its own local state, the state cannot be accessed and modified outside the component and can only be used inside the component.
+
 - [ ] Describe props.
 
+Props are arguments passed into React components. They are passed to components via HTML attributes. Props make components reusable by giving components the ability to receive data from the parent component in the form of props.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+A "side effect" is anything that affects something outside the scope of the function being executed. You sync effects in a React component through useEffect. Whenever props change, the state is set inside useEffect.
 
 ## Project Set Up
 
